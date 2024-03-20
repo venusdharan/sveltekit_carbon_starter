@@ -30,16 +30,17 @@
     import { expoIn } from "svelte/easing";
     let theme = "g100"; // "white" | "g10" | "g80" | "g90" | "g100"
     onMount(function () {
-        window.document.documentElement.setAttribute("theme", theme);
+        // window.document.documentElement.setAttribute("theme", theme);
     });
 
-    $: theme, changeTheme();
+    // $: theme, changeTheme();
 
-    function changeTheme() {
-        if (window.document) {
-            window.document.documentElement.setAttribute("theme", theme);
-        }
-    }
+    // function changeTheme() {
+    //     if (window.document) {
+    //         window.document.documentElement.setAttribute("theme", theme);
+    //     }
+    // }
+
     let isSideNavOpen = false;
 
     import Search from "$lib/Search.svelte";
@@ -47,6 +48,9 @@
     import Logout from "carbon-icons-svelte/lib/Logout.svelte";
   import SettingsAdjust from "carbon-icons-svelte/lib/SettingsAdjust.svelte";
   import UserAvatarFilledAlt from "carbon-icons-svelte/lib/UserAvatarFilledAlt.svelte";
+
+  import ThemeSwitcher from "$lib/ThemeSwitcher.svelte";
+
 </script>
 
 <Header
@@ -67,6 +71,7 @@
           tooltipAlignment="end"
           icon={Logout}
         />
+        <ThemeSwitcher/>
         <Actions />
     </HeaderUtilities>
 </Header>
